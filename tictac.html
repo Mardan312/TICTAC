@@ -1,0 +1,204 @@
+<html>
+<head>
+<title>TIC TAC</title>
+<script src="tictac.js" defer></script>
+<style>
+*
+{
+margin:0;
+padding:0;
+}
+body
+{
+background:#349898;
+overflow:hidden;
+}
+.game
+{
+display:flex;
+width:100%;
+}
+.score
+{
+width:350px;
+height:450px;
+margin-right:150px;
+margin-top:120px;
+background:#327977;
+box-shadow:0px 6px 6px 3px black;
+text-align:center;
+transform:translateX(130%);
+animation-name:score;
+animation-duration:1000s;
+
+}
+.board
+{
+width:500px;
+height:500px;
+box-shadow:0px 0px 3px 10px black;
+margin:100px auto;
+background:#534646;
+position:relative;
+transform:translateY(-110%);
+animation-name:pop;
+animation-duration:1000s;
+}
+.r
+{
+position:absolute;
+display:flex;
+justify-content:space-between;
+width:100%;
+height:33%;
+}
+.b1
+{
+flex-basis:33%;
+background:white;
+height:100%;
+
+
+}
+.r2
+{
+top:33.5%;
+}
+.r3
+{
+top:67%;
+}
+
+.b1 
+{
+width:100%;
+height:100%;
+font-size:170px;
+text-align:center;
+font-family:consolas;
+line-height:100%;
+opacity:1;
+cursor:pointer;
+transition:1s;
+color:white;
+
+}
+.b-div
+{
+width:500px;
+margin-left:300px;
+text-align:center;
+}
+.b-div button
+{
+width:150px;
+height:50px;
+outline:none;
+background:#327977;
+box-shadow:0px 5px 5px 0px black;
+border:none;
+color:white;
+font-size:20px;
+border-radius:5px 0px 5px 0px ;
+margin-top:-50px;
+
+}
+.b-div button:active
+{
+transform:translateY(4px);
+
+}
+
+@keyframes pop
+{
+0%{transform:translateY(-110%);}
+0.1%{transform:translateY(0%);}
+
+
+100%{transform:translateY(0%);}
+}
+@keyframes score
+{
+0%{transform:translateX(150%);}
+0.1%{transform:translateX(150%);}
+0.3%{transform:translateX(0%);}
+
+
+100%{transform:translateX(0%);}
+}
+
+
+
+
+.score h1
+{
+color:#cccccc;
+font-family:consolas;
+text-align:center;
+font-size:40px;
+margin-top:20px;
+}
+.score h2
+{
+color:#cccccc;
+font-family:consolas;
+text-align:center;
+font-size:35px;
+margin-top:10px;
+}
+.score h3
+{
+color:#222222;
+font-family:consolas;
+text-align:center;
+font-size:60px;
+margin-top:30px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+
+<div class="game">
+<div class="board">
+
+<div class="r r1">
+<div class="b1 d1" onclick="tic1()" id="one"></div>
+<div class="b1 d2" onclick="tic2()" id="two"></div>
+<div class="b1 d3" onclick="tic3()" id="three"></div>
+</div>
+
+<div class="r r2">
+<div class="b1 d4" onclick="tic4()" id="four"></div>
+<div class="b1 d5" onclick="tic5()" id="five"></div>
+<div class="b1 d6" onclick="tic6()" id="six"></div>
+</div>
+
+<div class="r r3">
+<div class="b1 d7" onclick="tic7()" id="seven"></div>
+<div class="b1 d8" onclick="tic8()" id="eight"></div>
+<div class="b1 d9" onclick="tic9()" id="nine"></div>
+</div>
+
+</div>
+
+<div class="score">
+<h1>Score Board</h1>
+<h3 id="scoreX">0</h3>
+<h2>Player X</h2>
+<h3 id="scoreO">0</h3>
+<h2>Player O</h2>
+
+</div>
+</div>
+
+
+<div class="b-div">
+<button onclick="restart()">RESTART</button>
+</div>
+
+</body>
+</html>
